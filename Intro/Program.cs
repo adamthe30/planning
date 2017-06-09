@@ -38,6 +38,8 @@ namespace Intro
             Cv2.ImWrite("RandomBlobs.png", genBlobSizeHist.RandomBlobs(100,200,out dummy));
 
 
+
+
             // Show window until keypress or max. 5 seconds
             Mat img = genCC.CirclesInGridSkipDiagonalImage(out dummy);
             Cv2.ImShow("CirclesInGridSkipDiagonalImage", img);

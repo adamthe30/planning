@@ -69,9 +69,11 @@
     <Compile Include="Solutions\BlobSizeHistogramTask.cs" />
     <Compile Include="Solutions\BoundingBoxTask.cs" />
     <Compile Include="Solutions\ConnectedComponentsTask.cs" />
+    <Compile Include="Solutions\DistanceMapTask.cs" />
     <Compile Include="TestImageGenerators\BlobSizeHistogramTestImages.cs" />
     <Compile Include="TestImageGenerators\BoundingBoxTestImages.cs" />
     <Compile Include="TestImageGenerators\ConnectedComponentsTestImages.cs" />
+    <Compile Include="TestImageGenerators\DistanceMapTestImages.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -75,6 +75,7 @@
     <Compile Include="TestBlobSizeHistogram.cs" />
     <Compile Include="TestBoundingBox.cs" />
     <Compile Include="TestConnectedComponents.cs" />
+    <Compile Include="TestDistanceMap.cs" />
     <Compile Include="TestIntro.cs" />
   </ItemGroup>
   <ItemGroup>
