@@ -19,20 +19,27 @@ namespace Intro
             Console.WriteLine("Mizu?");
 
             // Save all test images into PNG files.
-            ConnectedComponentsTestImages gen = new ConnectedComponentsTestImages();
+            ConnectedComponentsTestImages genCC = new ConnectedComponentsTestImages();
             int dummy;
-            Cv2.ImWrite("TrivialImage.png", gen.TrivialImage(out dummy));
-            Cv2.ImWrite("SingleRectImage.png", gen.SingleRectImage(out dummy));
-            Cv2.ImWrite("ComplexShapeImage.png", gen.ComplexShapeImage(out dummy));
-            Cv2.ImWrite("ThinLineShapeImage.png", gen.ThinLineShapeImage(out dummy));
-            Cv2.ImWrite("CirclesInGridSkipDiagonalImage.png", gen.CirclesInGridSkipDiagonalImage(out dummy));
-            Cv2.ImWrite("ImageWithText.png", gen.ImageWithText(out dummy));
-            Cv2.ImWrite("ThinLinksAndGapsImage.png", gen.ThinLinksAndGapsImage());
+            Cv2.ImWrite("TrivialImage.png", genCC.TrivialImage(out dummy));
+            Cv2.ImWrite("SingleRectImage.png", genCC.SingleRectImage(out dummy));
+            Cv2.ImWrite("ComplexShapeImage.png", genCC.ComplexShapeImage(out dummy));
+            Cv2.ImWrite("ThinLineShapeImage.png", genCC.ThinLineShapeImage(out dummy));
+            Cv2.ImWrite("CirclesInGridSkipDiagonalImage.png", genCC.CirclesInGridSkipDiagonalImage(out dummy));
+            Cv2.ImWrite("ImageWithText.png", genCC.ImageWithText(out dummy));
+            Cv2.ImWrite("ThinLinksAndGapsImage.png", genCC.ThinLinksAndGapsImage());
 
+            BoundingBoxTestImages genBBox = new BoundingBoxTestImages();
+            int d1, d2, d3, d4; // Dummy variables
+            Cv2.ImWrite("SimpleRectangleImage.png", genBBox.SimpleRectangleImage(out d1, out d2, out d3, out d4));
+            Cv2.ImWrite("RandomPolygonImage.png", genBBox.RandomPolygonImage(out d1, out d2, out d3, out d4));
+
+            BlobSizeHistogramTestImages genBlobSizeHist = new BlobSizeHistogramTestImages();
+            Cv2.ImWrite("RandomBlobs.png", genBlobSizeHist.RandomBlobs(100,200,out dummy));
 
 
             // Show window until keypress or max. 5 seconds
-            Mat img = gen.CirclesInGridSkipDiagonalImage(out dummy);
+            Mat img = genCC.CirclesInGridSkipDiagonalImage(out dummy);
             Cv2.ImShow("CirclesInGridSkipDiagonalImage", img);
             Cv2.WaitKey(5000);
         }

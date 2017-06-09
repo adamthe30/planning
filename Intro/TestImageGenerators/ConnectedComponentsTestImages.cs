@@ -16,7 +16,7 @@ namespace Intro.TestImageGenerators
         public Mat SingleRectImage(out int correctNumber)
         {
             Mat result = new Mat(600, 800, MatType.CV_8UC1);
-            Cv2.Rectangle(result, new Rect(100, 100, 400, 200), new Scalar(255,255,255), -1);
+            Cv2.Rectangle(result, new Rect(100, 100, 400, 200), new Scalar(255), -1);
             correctNumber = 2;
             return result;
         }
@@ -24,7 +24,7 @@ namespace Intro.TestImageGenerators
         public Mat ComplexShapeImage(out int correctNumber)
         {
             Mat result = new Mat(600, 700, MatType.CV_8UC1);
-            Scalar color = new Scalar(255, 255, 255);
+            Scalar color = new Scalar(255);
             Cv2.Rectangle(result, new Rect(100, 100, 100, 400), color, -1);
             Cv2.Rectangle(result, new Rect(300, 100, 100, 400), color, -1);
             Cv2.Rectangle(result, new Rect(500, 100, 100, 400), color, -1);
@@ -37,7 +37,7 @@ namespace Intro.TestImageGenerators
         public Mat ThinLineShapeImage(out int correctNumber)
         {
             Mat result = new Mat(600, 800, MatType.CV_8UC1);
-            Scalar color = new Scalar(255, 255, 255);
+            Scalar color = new Scalar(255);
             Cv2.Line(result, 400, 100, 500, 200, color, 1);
             Cv2.Line(result, 400, 100, 300, 200, color, 1);
             Cv2.Line(result, 300, 200, 500, 200, color, 1);
@@ -47,7 +47,7 @@ namespace Intro.TestImageGenerators
 
         public Mat CirclesInGridSkipDiagonalImage(out int correctNumber)
         {
-            Scalar color = new Scalar(255, 255, 255);
+            Scalar color = new Scalar(255);
             int radius = 10;
             int step = 40;
             int nX = 10;
@@ -71,7 +71,7 @@ namespace Intro.TestImageGenerators
 
         public Mat ImageWithText(out int correctNumber)
         {
-            Scalar color = new Scalar(255, 255, 255);
+            Scalar color = new Scalar(255);
             HersheyFonts font = HersheyFonts.HersheyPlain;
             double fontScale = 1.0;
             int thickness = 1;
@@ -89,7 +89,7 @@ namespace Intro.TestImageGenerators
 
         public Mat ThinLinksAndGapsImage()
         {
-            Scalar color = new Scalar(255, 255, 255);
+            Scalar color = new Scalar(255);
             Mat result = new Mat(600, 800, MatType.CV_8UC1);
             Cv2.Rectangle(result, new Rect(100,100,100,100), color, -1);
             Cv2.Rectangle(result, new Rect(205,100,495,100), color, -1);
@@ -102,7 +102,6 @@ namespace Intro.TestImageGenerators
             // With dilation (radius 3): 3
             // With dilation (radius 8): 2
             // With erosion (radius 1): 5
-
             return result;
         }
 

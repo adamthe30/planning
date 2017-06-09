@@ -72,6 +72,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestBlobSizeHistogram.cs" />
+    <Compile Include="TestBoundingBox.cs" />
+    <Compile Include="TestConnectedComponents.cs" />
     <Compile Include="TestIntro.cs" />
   </ItemGroup>
   <ItemGroup>
