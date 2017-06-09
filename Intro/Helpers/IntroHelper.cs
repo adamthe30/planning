@@ -1,7 +1,7 @@
 ﻿using System;
 using OpenCvSharp;
 
-namespace Intro
+namespace Intro.Helpers
 {
     public class IntroHelper
     {
