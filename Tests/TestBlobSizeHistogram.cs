@@ -62,7 +62,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
-        public void TestBlobSizeHistogramEmptyImage()
+        public void BlobSizeHistogramEmptyImage()
         {
             var gen = new BlobSizeHistogramTestImages();
             Mat image = gen.EmptyImage();
@@ -72,7 +72,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestBlobSizeHistogramRandomBlobs()
+        public void BlobSizeHistogramRandomBlobs()
         {
             var gen = new BlobSizeHistogramTestImages();
             int correctNumber;

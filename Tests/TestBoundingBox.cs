@@ -62,7 +62,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
-        public void TestBoundingBoxSimpleRectangleImage()
+        public void BoundingBoxSimpleRectangleImage()
         {
             // Note: if the left side of a rectangle is in column 10 and its width is 10,
             //  then the right side will be in column 19 (and not 20)!
@@ -78,7 +78,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestBoundingBoxRandomPolygonImage()
+        public void BoundingBoxRandomPolygonImage()
         {
             BoundingBoxTestImages genBBox = new BoundingBoxTestImages();
             int minX, minY, maxX, maxY;

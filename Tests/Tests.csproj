@@ -76,7 +76,9 @@
     <Compile Include="TestBoundingBox.cs" />
     <Compile Include="TestConnectedComponents.cs" />
     <Compile Include="TestDistanceMap.cs" />
+    <Compile Include="TestDrawing.cs" />
     <Compile Include="TestIntro.cs" />
+    <Compile Include="TestTurkmesz.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Intro\Intro.csproj">

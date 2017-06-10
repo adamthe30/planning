@@ -62,7 +62,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
-        public void TestConnectedComponentsTrivialImage()
+        public void ConnectedComponentsTrivialImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -73,7 +73,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsSingleRectImage()
+        public void ConnectedComponentsSingleRectImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -84,7 +84,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsComplexShapeImage()
+        public void ConnectedComponentsComplexShapeImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -95,7 +95,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsThinLineShapeImage()
+        public void ConnectedComponentsThinLineShapeImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -106,7 +106,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsCirclesInGridSkipDiagonalImage()
+        public void ConnectedComponentsCirclesInGridSkipDiagonalImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -117,7 +117,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsImageWithText()
+        public void ConnectedComponentsImageWithText()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
@@ -128,7 +128,7 @@ namespace Tests
         }
 
         [TestMethod]
-        public void TestConnectedComponentsThinLinksAndGapsImage()
+        public void ConnectedComponentsThinLinksAndGapsImage()
         {
             var cc = new ConnectedComponentsTask();
             var gen = new ConnectedComponentsTestImages();
