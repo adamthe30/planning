@@ -78,6 +78,7 @@
     <Compile Include="TestDistanceMap.cs" />
     <Compile Include="TestDrawing.cs" />
     <Compile Include="TestIntro.cs" />
+    <Compile Include="TestMotionTracking.cs" />
     <Compile Include="TestTurkmesz.cs" />
   </ItemGroup>
   <ItemGroup>

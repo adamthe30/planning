@@ -71,11 +71,13 @@
     <Compile Include="Solutions\ConnectedComponentsTask.cs" />
     <Compile Include="Solutions\DistanceMapTask.cs" />
     <Compile Include="Solutions\DrawerTask.cs" />
+    <Compile Include="Solutions\MotionTrackingTask.cs" />
     <Compile Include="Solutions\TurkmeszTask.cs" />
     <Compile Include="TestImageGenerators\BlobSizeHistogramTestImages.cs" />
     <Compile Include="TestImageGenerators\BoundingBoxTestImages.cs" />
     <Compile Include="TestImageGenerators\ConnectedComponentsTestImages.cs" />
     <Compile Include="TestImageGenerators\DistanceMapTestImages.cs" />
+    <Compile Include="TestImageGenerators\MotionTrackingAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

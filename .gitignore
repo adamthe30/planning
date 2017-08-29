@@ -4,3 +4,5 @@ packages/*
 Tests/bin/*
 Tests/obj/*
 .vs/OpenCvTemalabor/v14/.suo
+*.suo
+*.ide

@@ -52,7 +52,7 @@ namespace Intro.TestImageGenerators
             int step = 40;
             int nX = 10;
             int nY = 10;
-            Mat result = new Mat((nY + 2) * step, (nX+2)*step, MatType.CV_8UC1);
+            Mat result = new Mat((nY + 2) * step, (nX+2)*step, MatType.CV_8UC1, new Scalar(0));
 
             for (int i = 0; i < nX; i++)
             {
