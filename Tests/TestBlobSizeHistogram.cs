@@ -33,29 +33,29 @@ namespace Tests
             }
         }
 
-        [TestMethod]
-        [Ignore]
-        public void BlobSizeHistogramEmptyImage()
-        {
-            var gen = new BlobSizeHistogramTestImages();
-            Mat image = gen.EmptyImage();
-            var hist = new BlobSizeHistogramTask();
-            var blobCount = hist.GetBlobNumberInAreaRange(0, 100);
-            Assert.AreEqual(blobCount, 0);
-        }
+        //[TestMethod]
+        //[Ignore]
+        //public void BlobSizeHistogramEmptyImage()
+        //{
+        //    var gen = new BlobSizeHistogramTestImages();
+        //    Mat image = gen.EmptyImage();
+        //    var hist = new BlobSizeHistogramTask();
+        //    var blobCount = hist.GetBlobNumberInAreaRange(0, 100);
+        //    Assert.AreEqual(blobCount, 0);
+        //}
 
-        [TestMethod]
-        [Ignore]
-        public void BlobSizeHistogramRandomBlobs()
-        {
-            var gen = new BlobSizeHistogramTestImages();
-            int correctNumber;
-            int minArea = 100;
-            int maxArea = 350;
-            Mat image = gen.RandomBlobs(minArea,maxArea,out correctNumber);
-            var hist = new BlobSizeHistogramTask();
-            var blobCount = hist.GetBlobNumberInAreaRange(minArea, maxArea);
-            Assert.AreEqual(blobCount, correctNumber);
-        }
+        //[TestMethod]
+        //[Ignore]
+        //public void BlobSizeHistogramRandomBlobs()
+        //{
+        //    var gen = new BlobSizeHistogramTestImages();
+        //    int correctNumber;
+        //    int minArea = 100;
+        //    int maxArea = 350;
+        //    Mat image = gen.RandomBlobs(minArea,maxArea,out correctNumber);
+        //    var hist = new BlobSizeHistogramTask();
+        //    var blobCount = hist.GetBlobNumberInAreaRange(minArea, maxArea);
+        //    Assert.AreEqual(blobCount, correctNumber);
+        //}
     }
 }

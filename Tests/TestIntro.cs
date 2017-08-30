@@ -14,7 +14,6 @@ namespace Tests
         {
             IntroHelper helper = new IntroHelper();
             Mat image = helper.CreateEmptyGreenImage();
-            var color = helper.GetPixelColor(image, new Point(10, 10));
         }
     }
 }

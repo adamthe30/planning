@@ -39,28 +39,6 @@ namespace Tests
             }
         }
 
-        #region Additional test attributes
-        //
-        // You can use the following additional attributes as you write your tests:
-        //
-        // Use ClassInitialize to run code before running the first test in the class
-        // [ClassInitialize()]
-        // public static void MyClassInitialize(TestContext testContext) { }
-        //
-        // Use ClassCleanup to run code after all tests in a class have run
-        // [ClassCleanup()]
-        // public static void MyClassCleanup() { }
-        //
-        // Use TestInitialize to run code before running each test 
-        // [TestInitialize()]
-        // public void MyTestInitialize() { }
-        //
-        // Use TestCleanup to run code after each test has run
-        // [TestCleanup()]
-        // public void MyTestCleanup() { }
-        //
-        #endregion
-
         [TestMethod]
         [Ignore]
         public void DistanceMapThreeRectangles()
@@ -71,7 +49,7 @@ namespace Tests
             List<Point> maxDistancePoints = task.GetMaxDistancePoints(image);
 
             // All returned points must be near the central line of one of the rectangles.
-            foreach(var p in maxDistancePoints)
+            foreach (var p in maxDistancePoints)
             {
                 if (isPointNearHorizontalLine(p, 200, 300, 200)) continue;
                 if (isPointNearHorizontalLine(p, 200, 300, 450)) continue;
@@ -97,7 +75,7 @@ namespace Tests
 
         private bool allPointsAreNearListElements(int x0, int x1, int y, List<Point> maxDistancePoints)
         {
-            for(int x=x0; x<=x1; x++)
+            for (int x = x0; x <= x1; x++)
             {
                 Point p = new Point(x, y);
                 if (!isNearListElement(p, maxDistancePoints))
@@ -109,7 +87,7 @@ namespace Tests
         private bool isNearListElement(Point p, List<Point> maxDistancePoints)
         {
             int maxDistance = 1;
-            foreach(var element in maxDistancePoints)
+            foreach (var element in maxDistancePoints)
             {
                 if (Math.Abs(p.X - element.X) > maxDistance) break;
                 if (Math.Abs(p.Y - element.Y) > maxDistance) break;
