@@ -4,9 +4,11 @@ namespace Intro.Solutions
 {
     public class DrawerTask
     {
+        private Size imageSize;
         // Initializes the image we are going to draw on.
         public void StartDrawing(Size imageSize, Scalar backgroundColor)
         {
+            this.imageSize = imageSize;
         }
 
         public void SetColor(Scalar color)
@@ -21,7 +23,7 @@ namespace Intro.Solutions
         // Returns the image the drawer is currently drawing on.
         public Mat GetImage()
         {
-            return new Mat();
+            return new Mat(imageSize,MatType.CV_8UC3,new Scalar(0,0,0));
         }
     }
 }

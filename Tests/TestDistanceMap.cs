@@ -62,6 +62,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
+        [Ignore]
         public void DistanceMapThreeRectangles()
         {
             var gen = new DistanceMapTestImages();

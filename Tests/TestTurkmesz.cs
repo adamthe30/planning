@@ -55,6 +55,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
+        [Ignore]
         public void TurkmeszTrivial()
         {
             var task = new TurkmeszTask();
@@ -66,6 +67,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void TurkmeszDetails()
         {
             var task = new TurkmeszTask();

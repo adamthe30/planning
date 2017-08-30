@@ -62,6 +62,7 @@ namespace Tests
         #endregion
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsTrivialImage()
         {
             var cc = new ConnectedComponentsTask();
@@ -73,6 +74,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsSingleRectImage()
         {
             var cc = new ConnectedComponentsTask();
@@ -84,6 +86,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsComplexShapeImage()
         {
             var cc = new ConnectedComponentsTask();
@@ -95,6 +98,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsThinLineShapeImage()
         {
             var cc = new ConnectedComponentsTask();
@@ -106,6 +110,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsCirclesInGridSkipDiagonalImage()
         {
             var cc = new ConnectedComponentsTask();
@@ -117,6 +122,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsImageWithText()
         {
             var cc = new ConnectedComponentsTask();
@@ -128,6 +134,7 @@ namespace Tests
         }
 
         [TestMethod]
+        [Ignore]
         public void ConnectedComponentsThinLinksAndGapsImage()
         {
             var cc = new ConnectedComponentsTask();
