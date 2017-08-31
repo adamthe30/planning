@@ -18,11 +18,12 @@ Github classroom meghívó link: [https://classroom.github.com/a/HEXhax4D](https
 
 (Az eredményeket mergelni nem fogjuk a kiindulási repositoryba annak ellenére, hogy a classroom gyakorlatilag forkolja azt a repositoryt.)
 
-### Levlista: opencvtemalabor@googlegroups.com
+### Levlista
+opencvtemalabor@googlegroups.com
+
 A levlista arra van, hogy kérdezzetek rajta, osszátok meg, hogy miket találtatok. Nem egyedül kell rájönni mindenre, de azért ne is oldjátok meg egymás helyett a feladatokat. Ja és nem csak egy helyes megoldás van! Ha valamit nem tudtok eldönteni, válasszátok a logikusabbnak tűnő megoldást. Aztán utána megbeszéljük, ki mire jutott.
 
 ### Unit tesztek
-
 A kiindulási repositoryban egy kis keretprogram található, valamint egy csomó unit teszt. A feladatok elkészítése során a funkciók egy részt ezek a unit tesztek is ellenőrzik (de nem mindent). A félév során egyrészt ezeket a unit teszteket kell "bezöldíteni". Az elején minden unit teszt előtt van egy "Ignore" attribútum, hogy ne jelezzen hibát, ezeket természetesen el kell távolítani, amint a megoldásodat tesztelni szeretnéd. (Visual Studio alatt a Test Explorerben tudod lefuttatni a solution minden unit tesztjét. Ha esetleg itt semmi nem jelenik meg, fordítsd le a projektet és ellenőrizd, hogy a Teszt menüben a processzor architektúra úgyanarra van-e beállítva, mint amire a projekteket fordítod, pl. x64-re.)
 
 Amellett, hogy a már adott unit teszteket bezöldíted, a feladat része az is, hogy te is gyakorold a megoldásod helyességének ellenőrzését. Ezért arra kérlek, hogy minden egyes feladathoz te magad is készíts 2-3 további unit tesztet, hogy minél alaposabban körbe legyen tesztelve az adott kódrészlet.
@@ -32,7 +33,7 @@ Van egy unit teszt, ami már rögtön az elején zöld, ezzel tudod ellenőrizni
 # Feladatok hétről hétre
 Az első 2 héten közös előadások vannak, addig nincsen OpenCV-s feladat, bár ha van kedved, természetesen előre is dolgozhatsz. A feladatok egy részéhez kicsit utána is kell olvasni a dolgokatnak (pl. az eróziónak, mint képmorfológiai művelet), ilyenkor a Google és az OpenCV dokumentáció egy jó kiinduló pont. Ha pedig megakadsz vele, szólj!
 
-## 3. Hét:
+## 3. Hét: Bevezető
 OpenCV beizzítása C# alatt, webes dokumentáció (OpenCV 3.0) megkeresése, belenézés.
 GIT repository beüzelemése, ebben mindenki nyisson magának egy saját könyvtárat és abba dolgozzon.
 Feladat: írjatok egy kis programot, mely parancssori paraméterként kap két fájlnevet (egy létező képet és egy kimeneti képfájlt), ezt betölti, rajzol neki egy sárga keretet, majd elmenti a 2. paraméterként kapott néven.
