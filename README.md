@@ -24,14 +24,14 @@ opencvtemalabor@googlegroups.com
 A levlista arra van, hogy kérdezzetek rajta, osszátok meg, hogy miket találtatok. Nem egyedül kell rájönni mindenre, de azért ne is oldjátok meg egymás helyett a feladatokat. Ja és nem csak egy helyes megoldás van! Ha valamit nem tudtok eldönteni, válasszátok a logikusabbnak tűnő megoldást. Aztán utána megbeszéljük, ki mire jutott.
 
 ### Unit tesztek
-A kiindulási repositoryban egy kis keretprogram található, valamint egy csomó unit teszt. A feladatok elkészítése során a funkciók egy részt ezek a unit tesztek is ellenőrzik (de nem mindent). A félév során egyrészt ezeket a unit teszteket kell "bezöldíteni". Az elején minden unit teszt előtt van egy "Ignore" attribútum, hogy ne jelezzen hibát, ezeket természetesen el kell távolítani, amint a megoldásodat tesztelni szeretnéd. (Visual Studio alatt a Test Explorerben tudod lefuttatni a solution minden unit tesztjét. Ha esetleg itt semmi nem jelenik meg, fordítsd le a projektet és ellenőrizd, hogy a Teszt menüben a processzor architektúra úgyanarra van-e beállítva, mint amire a projekteket fordítod, pl. x64-re.)
+A kiindulási repositoryban egy kis keretprogram található, valamint egy csomó unit teszt. A feladatok elkészítése során a funkciók egy részét ezek a unit tesztek is ellenőrzik (de nem mindent). A félév során egyrészt ezeket a unit teszteket kell "bezöldíteni". Az elején minden unit teszt előtt van egy "Ignore" attribútum, hogy ne jelezzen hibát, ezeket természetesen el kell távolítani, amint a megoldásodat tesztelni szeretnéd. (Visual Studio alatt a Test Explorerben tudod lefuttatni a solution minden unit tesztjét. Ha esetleg itt semmi nem jelenik meg, fordítsd le a projektet és ellenőrizd, hogy a Teszt menüben a processzor architektúra ugyanarra van-e beállítva, mint amire a projekteket fordítod, pl. x64-re.)
 
 Amellett, hogy a már adott unit teszteket bezöldíted, a feladat része az is, hogy te is gyakorold a megoldásod helyességének ellenőrzését. Ezért arra kérlek, hogy minden egyes feladathoz te magad is készíts 2-3 további unit tesztet, hogy minél alaposabban körbe legyen tesztelve az adott kódrészlet.
 
 Van egy unit teszt, ami már rögtön az elején zöld, ezzel tudod ellenőrizni, hogy a fejlesztő környezet készen áll-e az indulásra: TestIntro
 
 # Feladatok hétről hétre
-Az első 2 héten közös előadások vannak, addig nincsen OpenCV-s feladat, bár ha van kedved, természetesen előre is dolgozhatsz. A feladatok egy részéhez kicsit utána is kell olvasni a dolgokatnak (pl. az eróziónak, mint képmorfológiai művelet), ilyenkor a Google és az OpenCV dokumentáció egy jó kiinduló pont. Ha pedig megakadsz vele, szólj!
+Az első 2 héten közös előadások vannak, addig nincsen OpenCV-s feladat, bár ha van kedved, természetesen előre is dolgozhatsz. A feladatok egy részéhez kicsit utána is kell olvasni a dolgoknak (pl. az eróziónak, mint képmorfológiai művelet), ilyenkor a Google és az OpenCV dokumentáció egy jó kiinduló pont. Ha pedig megakadsz vele, szólj!
 
 ## 3. Hét: Bevezető
 OpenCV beizzítása C# alatt, webes dokumentáció (OpenCV 3.0) megkeresése, belenézés.
@@ -48,11 +48,12 @@ Készítsetek egy programot, mely megnyit egy videó fájlt (ha van kamerátok, 
 Kapcsolódó unit teszt: még nincsen
 
 ## 5. Hét: Foltok megszámolása
-Írj egy programot, mely megszámolja, hogy egy képen hány összefüggő piros folt van. A kis szakadások eltűntetéséhez először válaszd ki a piros részeket, azokat dilatáld, majd számold meg őket. A számolás alapja a floodFill: kezdetben a háttér legyen fekete “0”, az előtér “255”. Ezután indulj el a bal felső sarokból pixelenként, és ha egy pont 255, akkor onnan indulva a floodFill segítségével színezd át 0-ra, és növeld a számlálót 1-gyel. A képen végig érve minden fekete lesz és a számláló az eltűntetett foltok számát jelzi. (Látványosabb megoldás, ha eltérő színűre színezed a foltokat és akkor utána érdemes meg is jeleníteni.)
+Írj egy programot, mely megszámolja, hogy egy képen hány összefüggő piros folt van. A kis szakadások eltűntetéséhez először válaszd ki a piros részeket, azokat dilatáld, majd számold meg őket. A számolás alapja a floodFill: kezdetben a háttér legyen mindenhol fekete “0”, az előtér “255”. Ezután indulj el a bal felső sarokból pixelenként, és ha egy pont 255, akkor abból a pontból kiindulva a floodFill segítségével színezd át minden pontját 0-ra, és növeld a számlálót 1-gyel. A képen végig érve minden fekete lesz és a számláló az eltűntetett foltok számát jelzi. (Látványosabb megoldás, ha eltérő színűre színezed a foltokat és akkor utána érdemes meg is jeleníteni.)
 
 Miután megvan minden összefüggő folt, határozd meg a bennfoglaló téglalapjukat!
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestBoundingBox
+
 További unit tesztek: TestConnectedComponents (amik még nem használják a dilatációt és eróziót)
 
 ## 6. Hét: kép morfológia, távolságok
@@ -75,7 +76,7 @@ Feladat: készíts egy programot, melyben az egérrel lehet rajzolni. Lehet benn
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestDrawing
 
-## 10. Hét: Folt métethisztogram
+## 10. Hét: Folt mérethisztogram
 Egy foltos képen a foltokról méret-hisztogram készítése és kirajzolása (akár a videó képre rárajzolt oszlopdiagram formájában is.) Kőzetek, ötvözetek, vagy légifelvételek elemzésénél gyakran szükség van ilyesmire.
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestBlobSizeHistogram
