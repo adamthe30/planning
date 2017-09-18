@@ -81,8 +81,9 @@ Egy foltos képen a foltokról méret-hisztogram készítése és kirajzolása (
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestBlobSizeHistogram
 
-## 11. Hét: Turkmesz
+## 11. Hét: Turkmesz, Langton hangyája, vagy Turmit
 A turkmesz egy kis véges állapotú automata jószág, ami egy képen mozog aszerint, hogy milyen színű az alatt álló pixel. Fekete-fehér kép esetén például a legegyszerűbb eset (ami most a feladat is) fekete pixelen állva azt fehérre színezi, balra fordul és megy előre egyet; fehér pixel esetén pedig feketére festi, jobbra fordul és úgy megy előre egyet. Egy idő után érdekes mintázatot fog kirajzolni. (Ha megvan, küldj rója egy screenshotot a levlistára! :) ) (A mozgási szabályok kommentárként szerepelnek a TurkmeszTask osztály kódjában.)
+(https://en.wikipedia.org/wiki/Langton%27s_ant)
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestTurkmesz
 
