@@ -14,7 +14,7 @@ Képszegmentációs módszerek kipróbálása (Canny edge detector, MSER: Maxima
 
 A GitHub classroomba ha regisztrálsz, akkor a kiindulási repositoryról kapsz egy saját változatot (private repo, más nem látja), ahova tudsz dolgozni. Így tudjuk követni az előre haladást. Kérlek, hogy a repositoryba rendszeresen pushold a változásokat, hogy lássuk, ki hogy halad.
 
-Github classroom meghívó link: [https://classroom.github.com/a/HEXhax4D](https://classroom.github.com/a/HEXhax4D)
+A Github classroom meghívó linket kockázatos itt megosztani, de bárkinek szívesen elküldöm.
 
 (Az eredményeket mergelni nem fogjuk a kiindulási repositoryba annak ellenére, hogy a classroom gyakorlatilag forkolja azt a repositoryt.)
 
