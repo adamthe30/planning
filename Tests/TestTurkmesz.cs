@@ -33,25 +33,25 @@ namespace Tests
         }
 
         [TestMethod]
-        [Ignore]
+        //[Ignore]
         public void TurkmeszTrivial()
         {
             var task = new TurkmeszTask();
-            var colorA = new Scalar(20, 20, 20);
-            var colorB = new Scalar(20, 20, 255);
-            task.Init(new Size(400, 400), new Point(200, 200), colorA, colorB);
+            var colorA = (byte)0;
+            var colorB = (byte)255;
+            task.Init(new Size(400, 400));
             Assert.IsTrue(task.GetCurrentRelativePosition() == new Point(0, 0));    // Step 0
             Assert.IsTrue(task.GetCurrentColor(new Point(0, 0)) == colorA);
         }
 
         [TestMethod]
-        [Ignore]
+        //[Ignore]
         public void TurkmeszDetails()
         {
             var task = new TurkmeszTask();
-            var colorA = new Scalar(20, 20, 20);
-            var colorB = new Scalar(20, 20, 255);
-            task.Init(new Size(400, 400), new Point(200, 200), colorA, colorB);
+            var colorA = (byte)0;
+            var colorB = (byte)255;
+            task.Init(new Size(400, 400));
             task.SimulateSingleStep();
             Assert.IsTrue(checkPositionAndColor(task, new Point(-1, 0), colorA));   // Step 1
             task.SimulateSingleStep();

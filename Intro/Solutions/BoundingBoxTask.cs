@@ -11,7 +11,11 @@ namespace Intro.Solutions
     {
         public Rect GetBoundingBox(Mat image)
         {
-            return new Rect(0, 0, image.Cols, image.Rows);
+            //return new Rect(0, 0, image.Cols, image.Rows);
+            Mat imageClone = image.Clone();
+            Rect r = Cv2.BoundingRect(imageClone);
+            Cv2.Rectangle(imageClone, r, new Scalar(128, 128, 128));
+            return r;
         }
     }
 }

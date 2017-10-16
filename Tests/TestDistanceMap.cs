@@ -16,9 +16,6 @@ namespace Tests
     {
         public TestDistanceMap()
         {
-            //
-            // TODO: Add constructor logic here
-            //
         }
 
         private TestContext testContextInstance;
@@ -40,27 +37,20 @@ namespace Tests
         }
 
         [TestMethod]
-        [Ignore]
-        public void DistanceMapThreeRectangles()
+        //[Ignore]
+        public void DistanceMapOneRectangle()
         {
             var gen = new DistanceMapTestImages();
-            Mat image = gen.ThreeRectanglesImage();
+            Mat image = gen.OneRectanglesImage();
             var task = new DistanceMapTask();
             List<Point> maxDistancePoints = task.GetMaxDistancePoints(image);
 
             // All returned points must be near the central line of one of the rectangles.
             foreach (var p in maxDistancePoints)
-            {
-                if (isPointNearHorizontalLine(p, 200, 300, 200)) continue;
-                if (isPointNearHorizontalLine(p, 200, 300, 450)) continue;
-                if (isPointNearHorizontalLine(p, 550, 650, 350)) continue;
-                Assert.Fail("This point is too far from the central parts of the rectangles.");
-            }
+                Assert.IsTrue(isPointNearHorizontalLine(p, 200, 300, 200));
 
-            // All points of the rectangle central lines must be near a returned "max distance point".
+            // All points of the rectangle central line must be near a returned "max distance point".
             Assert.IsTrue(allPointsAreNearListElements(200, 300, 200, maxDistancePoints));
-            Assert.IsTrue(allPointsAreNearListElements(200, 300, 450, maxDistancePoints));
-            Assert.IsTrue(allPointsAreNearListElements(550, 650, 350, maxDistancePoints));
         }
 
         private bool isPointNearHorizontalLine(Point p, int x0, int x1, int y)
@@ -89,8 +79,8 @@ namespace Tests
             int maxDistance = 1;
             foreach (var element in maxDistancePoints)
             {
-                if (Math.Abs(p.X - element.X) > maxDistance) break;
-                if (Math.Abs(p.Y - element.Y) > maxDistance) break;
+                if (Math.Abs(p.X - element.X) > maxDistance) continue;
+                if (Math.Abs(p.Y - element.Y) > maxDistance) continue;
                 return true;
             }
             return false;

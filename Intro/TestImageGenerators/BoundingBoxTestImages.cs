@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenCvSharp;
 
 namespace Intro.TestImageGenerators
@@ -11,7 +8,8 @@ namespace Intro.TestImageGenerators
     {
         public Mat SimpleRectangleImage(out int minX, out int minY, out int maxX, out int maxY)
         {
-            Mat result = new Mat(100, 100, MatType.CV_8UC1);
+            //konstruktorban szinnel kitoltom, igy nem memoriaszemet lesz benne
+            Mat result = new Mat(100, 100, MatType.CV_8UC1, new Scalar(0));
             Scalar color = new Scalar(255);
             Cv2.Rectangle(result, new Rect(10, 10, 81, 81), color);
             minX = 10;
@@ -27,7 +25,8 @@ namespace Intro.TestImageGenerators
             maxX = 0;
             minY = 100;
             maxY = 0;
-            Mat result = new Mat(100, 100, MatType.CV_8UC1);
+            //konstruktorban szinnel kitoltom, igy nem memoriaszemet lesz benne
+            Mat result = new Mat(100, 100, MatType.CV_8UC1, new Scalar(0));
             Scalar color = new Scalar(255);
             Random random = new Random(10); // Define seed to make the tests repeatable
             var points = new List<Point>();

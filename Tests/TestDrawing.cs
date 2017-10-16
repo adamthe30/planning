@@ -42,8 +42,8 @@ namespace Tests
             task.StartDrawing(imageSize, color);
             Mat image = task.GetImage();
             Vec3b currentColor = image.Get<Vec3b>(1, 1);
-            Assert.AreEqual(currentColor, color);
-            Assert.AreEqual(image.Size(), imageSize);
+            Assert.AreEqual(color, currentColor);
+            Assert.AreEqual(imageSize, image.Size());
         }
 
         [TestMethod]

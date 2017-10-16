@@ -30,6 +30,12 @@ Amellett, hogy a már adott unit teszteket bezöldíted, a feladat része az is,
 
 Van egy unit teszt, ami már rögtön az elején zöld, ezzel tudod ellenőrizni, hogy a fejlesztő környezet készen áll-e az indulásra: TestIntro
 
+### A projekt struktúra
+
+A feladatok során a fő hangsúly a unit teszteken van: ha azok zöldek, akkor minden OK. Vagyis nem kell feltétlenül minden feladathoz futtatható programot készíteni, elég, ha a ...Task végű osztályok tartalmát megírod úgy, hogy a unit tesztek zöldek legyenek. A unit teszt ilyen szempontból a programot helyettesíti: ugyanúgy tudod egyesével futtatni őket, debuggolni (jobb klikk a unit teszten a test explorerben).
+
+De ha egy feladathoz nincsen unit teszt (például a félév elején lévőkhöz nincs), vagy ki szeretnéd egészíteni valami extrákkal, nyugodtan készíts hozzá egy új projektet, ami hivatkozik (Add reference...) az Intro-ra és akkor tudha hívni a benne lévő ...Task osztályokat.
+
 # Feladatok hétről hétre
 Az első 2 héten közös előadások vannak, addig nincsen OpenCV-s feladat, bár ha van kedved, természetesen előre is dolgozhatsz. A feladatok egy részéhez kicsit utána is kell olvasni a dolgoknak (pl. az eróziónak, mint képmorfológiai művelet), ilyenkor a Google és az OpenCV dokumentáció egy jó kiinduló pont. Ha pedig megakadsz vele, szólj!
 
@@ -48,16 +54,19 @@ Készítsetek egy programot, mely megnyit egy videó fájlt (ha van kamerátok, 
 Kapcsolódó unit teszt: még nincsen
 
 ## 5. Hét: Foltok megszámolása
-Írj egy programot, mely megszámolja, hogy egy képen hány összefüggő piros folt van. A kis szakadások eltűntetéséhez először válaszd ki a piros részeket, azokat dilatáld, majd számold meg őket. A számolás alapja a floodFill: kezdetben a háttér legyen mindenhol fekete “0”, az előtér “255”. Ezután indulj el a bal felső sarokból pixelenként, és ha egy pont 255, akkor abból a pontból kiindulva a floodFill segítségével színezd át minden pontját 0-ra, és növeld a számlálót 1-gyel. A képen végig érve minden fekete lesz és a számláló az eltűntetett foltok számát jelzi. (Látványosabb megoldás, ha eltérő színűre színezed a foltokat és akkor utána érdemes meg is jeleníteni.)
+Írj egy programot, mely megszámolja, hogy egy képen hány összefüggő fehér folt van. A kis szakadások eltűntetéséhez először válaszd ki a piros részeket, azokat dilatáld, majd számold meg őket. A számolás alapja a floodFill: kezdetben a háttér legyen mindenhol fekete “0”, az előtér “255”. Ezután indulj el a bal felső sarokból pixelenként, és ha egy pont 255, akkor abból a pontból kiindulva a floodFill segítségével színezd át minden pontját 0-ra, és növeld a számlálót 1-gyel. A képen végig érve minden fekete lesz és a számláló az eltűntetett foltok számát jelzi. (Látványosabb megoldás, ha eltérő színűre színezed a foltokat és akkor utána érdemes meg is jeleníteni.)
 
 Miután megvan minden összefüggő folt, határozd meg a bennfoglaló téglalapjukat!
+Nagyon figyelj rá, hogy az OpenCV alatt a Mat pixeleinek indexelése ha nem pl. Point típussal történik, akkor sor-oszlop sorrendben következik, vagyis pl. a generic indexer esetében [y,x]! (Pixelek elérése gyorsan: https://github.com/shimat/opencvsharp/wiki/%5BCpp%5D-Accessing-Pixel)
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestBoundingBox
 
 További unit tesztek: TestConnectedComponents (amik még nem használják a dilatációt és eróziót)
 
 ## 6. Hét: kép morfológia, távolságok
-Ezen a héten két feladat van: az egyik az erózió és dilatáció, mint képmorfológiai művelet megismerése, melyek a foltokat kicsinyítik és növelik, a másik pedig a distance transform megismerése, mely minden pixelre meghatározza, hogy attól milyen messze van a legközelebbi előtér pont (pl. bináris kép esetén a fekete pontokra megmondja, hogy milyen messze van a legközelebbi fehér, ami egyben az oda mint középpontba beírható maximális kör sugara is).
+Ezen a héten két feladat van: az egyik az erózió és dilatáció, mint képmorfológiai művelet megismerése, melyek a foltokat kicsinyítik és növelik, a másik pedig a distance transform megismerése, mely minden pixelre meghatározza, hogy attól milyen messze van a legközelebbi fekete pont (pl. bináris kép esetén a fehér pontokra megmondja, hogy milyen messze van a legközelebbi fekete, ami egyben az oda mint középpontba beírható maximális kör sugara is).
+
+A feladat során téglalapok belsejében határozzuk meg a fekete "falaktól" mért távolságokat. A tesztek a maximális távolságokat keresik, ami helyes megoldás esetén a téglalap közepén lévő pixelek listája.
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestConnectedComponents, TestDistanceMap
 
