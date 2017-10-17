@@ -86,7 +86,7 @@ Feladat: készíts egy programot, melyben az egérrel lehet rajzolni. Lehet benn
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestDrawing
 
 ## 10. Hét: Folt mérethisztogram
-Egy foltos képen a foltokról méret-hisztogram készítése és kirajzolása (akár a videó képre rárajzolt oszlopdiagram formájában is.) Kőzetek, ötvözetek, vagy légifelvételek elemzésénél gyakran szükség van ilyesmire.
+Egy foltos képen a foltokról méret-hisztogram készítése és kirajzolása (akár a videó képre rárajzolt oszlopdiagram formájában is.) Kőzetek, ötvözetek, vagy légifelvételek elemzésénél gyakran szükség van ilyesmire. A tesztek egy csatornás (CV_8UC1) képet feltételeznek, amiben 0 a háttérszín és 255 a foltok színe.
 
 Kapcsolódó unit tesztek (a további, sajátokat is ide írd meg): TestBlobSizeHistogram
 
