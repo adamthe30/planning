@@ -1,16 +1,18 @@
-﻿using System;
+﻿using OpenCvSharp;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Intro.Solutions
 {
     public class BlobSizeHistogramTask
     {
-        public int GetBlobNumberInAreaRange(int minArea, int maxArea)
+        public int GetBlobNumberInAreaRange(Mat image, int minArea, int maxArea)
         {
-            return -1;
+            return 0;
+        }
+
+        public List<int> CollectBlobSizesGetBlobNumberInAreaRange(Mat image)
+        {
+            return new List<int>();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Intro.Solutions;
@@ -37,45 +36,72 @@ namespace Tests
         }
 
         [TestMethod]
-        [Ignore]
-        public void MotionTrackingTrivial()
+        [Ignore]    // Jelenleg az OpenCVSharp-ban a MOG2 gyongelkedik, igy ez a feladat kimarad
+        public void MotionTrackingTrivialJump()
         {
             // Assemble trivial motion
-            var gen = new MotionTrackingAnimation();
-            var shape = GenerateRectangleAsPolygon();
-            Assert.IsNotNull(shape);
-            var targetColor = new Scalar(255, 255, 255);
-            gen.Init(new Size(800, 600), new Scalar(0, 0, 0));
-            gen.InitMotion(shape, targetColor);
+            var anim = GenerateSingleMotion_Line();
+            assertDetection(anim);
+        }
 
-            Point initialLocation = new Point(10, 10);
-            gen.AddPoint(initialLocation);
-            int motionIndex = gen.FinishMotion();
-            Assert.AreEqual(motionIndex, 0);
-
-            // Generate first frame
-            Mat frame = gen.GetFrame(0);
-
-            // Track the object
+        private void assertDetection(MotionTrackingAnimation anim, int animationIndex=0)
+        {
+            const int frameNumberForInitialStabilization = 5;
             var task = new MotionTrackingTask();
-            task.Init(targetColor);
-            task.TrackNextFrame(frame);
-            Point currentPos = task.GetCurrentPosition();
+            task.Init(anim.GetTargetColor(animationIndex));
+            for (int frameIndex = 0; frameIndex < anim.GetFrameCount(animationIndex); frameIndex++)
+            {
+                Mat frame = anim.GetFrame(frameIndex);
+                task.TrackNextFrame(frame);
 
-            // Check position
-            Assert.IsTrue(areNear(currentPos, initialLocation));
+                if (frameIndex > frameNumberForInitialStabilization)
+                {
+                    Point currentPos = task.GetCurrentPosition();
+                    Point correctLocation = anim.GetCorrectLocation(animationIndex, frameIndex);
+                    Assert.IsTrue(areNear(currentPos, correctLocation));
+                }
+            }
         }
 
         private bool areNear(Point a, Point b)
         {
-            int maxDistance = 2;
+            int maxDistance = 5;
             return (Math.Abs(a.X - b.X) < maxDistance
                 && Math.Abs(a.Y - b.Y) < maxDistance);
         }
 
         private List<Point> GenerateRectangleAsPolygon()
         {
-            return null;
+            List<Point> rect = new List<Point>();
+            rect.Add(new Point(-20, -20));
+            rect.Add(new Point(20, -20));
+            rect.Add(new Point(20, 20));
+            rect.Add(new Point(-20, 20));
+            return rect;
         }
+
+        #region Generate test motions
+        private MotionTrackingAnimation GenerateSingleMotion_Line()
+        {
+            // Shape is staying for 10 frames and then jumps to a new location.
+            var anim = InitAnimation();
+            Point A = new Point(100, 100);
+            Point B = new Point(200, 200);
+            anim.AddLine(A, B, 100);
+            int motionIndex = anim.FinishMotion();
+            Assert.AreEqual(0, motionIndex);
+            return anim;
+        }
+
+        private MotionTrackingAnimation InitAnimation()
+        {
+            var gen = new MotionTrackingAnimation();
+            var shape = GenerateRectangleAsPolygon();
+            var targetColor = new Scalar(255, 255, 255);
+            gen.Init(new Size(800, 600), new Scalar(0, 0, 0));
+            gen.InitMotion(shape, targetColor);
+            return gen;
+        }
+        #endregion
     }
 }

@@ -31,7 +31,7 @@ namespace Intro.TestImageGenerators
         }
 
         private Motion currentMotion;
-        private List<Motion> allMotions;
+        private List<Motion> allMotions = new List<Motion>();
 
         public void InitMotion(List<Point> polygon, Scalar color)
         {
@@ -42,6 +42,12 @@ namespace Intro.TestImageGenerators
         public void AddPoint(Point anchorLocation)
         {
             currentMotion.MotionAnchorLocations.Add(anchorLocation);
+        }
+
+        public void AddMotionlessPoint(Point anchorLocation, int numberOfFrames)
+        {
+            for(int i=0; i<numberOfFrames; i++)
+                currentMotion.MotionAnchorLocations.Add(anchorLocation);
         }
 
         public void AddLine(Point from, Point to, int steps)
@@ -85,7 +91,6 @@ namespace Intro.TestImageGenerators
         {
             this.frameSize = frameSize;
             this.backgroundColor = backgroundColor;
-
         }
 
         public Mat GetFrame(int index)
@@ -100,6 +105,16 @@ namespace Intro.TestImageGenerators
         public Point GetCorrectLocation(int motionIndex, int frameIndex)
         {
             return allMotions[motionIndex].GetAnchorPosition(frameIndex);
+        }
+
+        public Scalar GetTargetColor(int motionIndex)
+        {
+            return allMotions[motionIndex].Color;
+        }
+
+        public int GetFrameCount(int motionIndex)
+        {
+            return allMotions[motionIndex].MotionAnchorLocations.Count;
         }
     }
 }

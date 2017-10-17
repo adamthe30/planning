@@ -12,12 +12,12 @@ namespace Intro.Solutions
 
         public Mat Dilate(Mat image, int v)
         {
-            return image.Clone();
+            return new Mat();
         }
 
         public Mat Erode(Mat image, int v)
         {
-            return image.Clone();
+            return new Mat();
         }
     }
 }

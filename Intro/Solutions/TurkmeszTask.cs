@@ -1,19 +1,18 @@
-﻿using OpenCvSharp;
+﻿using System;
+using OpenCvSharp;
 
 namespace Intro.Solutions
 {
     public class TurkmeszTask
     {
-        // Init (reset) everything, clear the image with colorA and move the turkmesz into the starting position.
+        // Init (reset) everything, clear the image and move the turkmesz into the center.
         // Initial orientation is upwards, towards relative position (0;-1).
-        public void Init(Size imageSize, Point startingPoint, Scalar colorA, Scalar colorB)
+        public void Init(Size imageSize)
         {
         }
 
         public void SimulateSingleStep()
         {
-            // If current color is colorA, paint it colorB, turn left and go forward.
-            // If current color is colorB, paint it colorA, turn right and go forward.
         }
 
         // Continue the simulation with given number of steps
@@ -24,12 +23,12 @@ namespace Intro.Solutions
         // Current position relative to the starting point
         public Point GetCurrentRelativePosition()
         {
-            return new Point(0, 0);
+            return new Point(0,0);
         }
 
-        public Scalar GetCurrentColor(Point relativePosition)
+        public byte GetCurrentColor(Point relativePosition)
         {
-            return new Scalar(0, 0, 0);
+            return 0;
         }
 
         public Mat GetImage()

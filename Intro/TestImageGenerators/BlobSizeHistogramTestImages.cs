@@ -7,14 +7,14 @@ namespace Intro.TestImageGenerators
     {
         public Mat EmptyImage()
         {
-            Mat result = new Mat(330, 330, MatType.CV_8UC1);
+            Mat result = new Mat(330, 330, MatType.CV_8UC1, new Scalar(0));
             return result;
         }
 
         public Mat RandomBlobs(int minAreaToCount, int maxAreaToCount, out int blobNumberInAreaRange)
         {
             // Rectangle areas range between 25 and 625.
-            Mat result = new Mat(330, 330, MatType.CV_8UC1);
+            Mat result = new Mat(330, 330, MatType.CV_8UC1, new Scalar(0));
             Scalar color = new Scalar(255);
             blobNumberInAreaRange = 0;
             Random random = new Random(20); // Define seed to make tests repeatable

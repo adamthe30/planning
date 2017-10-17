@@ -8,14 +8,14 @@ namespace Intro.TestImageGenerators
     {
         public Mat TrivialImage(out int correctNumber)
         {
-            Mat result = new Mat(600, 800, MatType.CV_8UC1);
+            Mat result = new Mat(600, 800, MatType.CV_8UC1, new Scalar(0));
             correctNumber = 1;
             return result;
         }
 
         public Mat SingleRectImage(out int correctNumber)
         {
-            Mat result = new Mat(600, 800, MatType.CV_8UC1);
+            Mat result = new Mat(600, 800, MatType.CV_8UC1, new Scalar(0));
             Cv2.Rectangle(result, new Rect(100, 100, 400, 200), new Scalar(255), -1);
             correctNumber = 2;
             return result;
@@ -23,7 +23,7 @@ namespace Intro.TestImageGenerators
 
         public Mat ComplexShapeImage(out int correctNumber)
         {
-            Mat result = new Mat(600, 700, MatType.CV_8UC1);
+            Mat result = new Mat(600, 700, MatType.CV_8UC1, new Scalar(0));
             Scalar color = new Scalar(255);
             Cv2.Rectangle(result, new Rect(100, 100, 100, 400), color, -1);
             Cv2.Rectangle(result, new Rect(300, 100, 100, 400), color, -1);
@@ -36,7 +36,7 @@ namespace Intro.TestImageGenerators
 
         public Mat ThinLineShapeImage(out int correctNumber)
         {
-            Mat result = new Mat(600, 800, MatType.CV_8UC1);
+            Mat result = new Mat(600, 800, MatType.CV_8UC1, new Scalar(0));
             Scalar color = new Scalar(255);
             Cv2.Line(result, 400, 100, 500, 200, color, 1);
             Cv2.Line(result, 400, 100, 300, 200, color, 1);
@@ -65,7 +65,7 @@ namespace Intro.TestImageGenerators
                 }
             }
 
-            correctNumber = nX * nY - Math.Min(nX, nY);
+            correctNumber = nX * nY - Math.Min(nX, nY) + 1;
             return result;
         }
 
@@ -79,7 +79,7 @@ namespace Intro.TestImageGenerators
             string text = "Mizu?";
 
             Size textSize = GraphicsHelper.GetTextSize("Mizu?", font, fontScale);
-            Mat result = new Mat(textSize.Height+10, textSize.Width+20, MatType.CV_8UC1);
+            Mat result = new Mat(textSize.Height+10, textSize.Width+20, MatType.CV_8UC1, new Scalar(0));
             GraphicsHelper.PutTextWithCenter(result, new Point(result.Cols / 2, result.Rows / 2),
                 text, color, font, fontScale, thickness, lineType);
 
@@ -90,7 +90,7 @@ namespace Intro.TestImageGenerators
         public Mat ThinLinksAndGapsImage()
         {
             Scalar color = new Scalar(255);
-            Mat result = new Mat(600, 800, MatType.CV_8UC1);
+            Mat result = new Mat(600, 800, MatType.CV_8UC1, new Scalar(0));
             Cv2.Rectangle(result, new Rect(100,100,100,100), color, -1);
             Cv2.Rectangle(result, new Rect(205,100,495,100), color, -1);
             Cv2.Rectangle(result, new Rect(100,210,100,290), color, -1);

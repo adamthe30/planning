@@ -14,8 +14,7 @@ namespace Intro.Solutions
 
         public Point GetCurrentPosition()
         {
-            // returns the center of the bounding box
-            return new Point(0, 0);
+            return new Point(0,0);
         }
     }
 }
