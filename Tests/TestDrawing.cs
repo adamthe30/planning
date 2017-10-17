@@ -33,7 +33,6 @@ namespace Tests
         }
 
         [TestMethod]
-        [Ignore]
         public void DrawingInit()
         {
             DrawerTask task = new DrawerTask();
@@ -42,12 +41,16 @@ namespace Tests
             task.StartDrawing(imageSize, color);
             Mat image = task.GetImage();
             Vec3b currentColor = image.Get<Vec3b>(1, 1);
-            Assert.AreEqual(color, currentColor);
+            Assert.AreEqual(toVec3b(color), currentColor);
             Assert.AreEqual(imageSize, image.Size());
         }
 
+        private Vec3b toVec3b(Scalar s)
+        {
+            return new Vec3b((byte)s.Val0, (byte)s.Val1, (byte)s.Val2);
+        }
+
         [TestMethod]
-        [Ignore]
         public void TestDrawingSimpleDrawing()
         {
             DrawerTask task = new DrawerTask();

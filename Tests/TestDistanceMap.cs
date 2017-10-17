@@ -37,7 +37,6 @@ namespace Tests
         }
 
         [TestMethod]
-        //[Ignore]
         public void DistanceMapOneRectangle()
         {
             var gen = new DistanceMapTestImages();

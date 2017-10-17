@@ -37,7 +37,6 @@ namespace Tests
         }
 
         [TestMethod]
-        //[Ignore]
         public void BoundingBoxSimpleRectangleImage()
         {
             // Note: if the left side of a rectangle is in column 10 and its width is 10,
@@ -54,7 +53,6 @@ namespace Tests
         }
 
         [TestMethod]
-        //[Ignore]
         public void BoundingBoxRandomPolygonImage()
         {
             BoundingBoxTestImages genBBox = new BoundingBoxTestImages();

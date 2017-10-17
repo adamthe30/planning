@@ -33,19 +33,16 @@ namespace Tests
         }
 
         [TestMethod]
-        //[Ignore]
         public void TurkmeszTrivial()
         {
             var task = new TurkmeszTask();
             var colorA = (byte)0;
-            var colorB = (byte)255;
             task.Init(new Size(400, 400));
             Assert.IsTrue(task.GetCurrentRelativePosition() == new Point(0, 0));    // Step 0
             Assert.IsTrue(task.GetCurrentColor(new Point(0, 0)) == colorA);
         }
 
         [TestMethod]
-        //[Ignore]
         public void TurkmeszDetails()
         {
             var task = new TurkmeszTask();
