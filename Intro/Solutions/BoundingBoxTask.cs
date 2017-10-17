@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenCvSharp;
+﻿using OpenCvSharp;
 
 namespace Intro.Solutions
 {
@@ -11,11 +6,7 @@ namespace Intro.Solutions
     {
         public Rect GetBoundingBox(Mat image)
         {
-            //return new Rect(0, 0, image.Cols, image.Rows);
-            Mat imageClone = image.Clone();
-            Rect r = Cv2.BoundingRect(imageClone);
-            Cv2.Rectangle(imageClone, r, new Scalar(128, 128, 128));
-            return r;
+            return new Rect(0,0,0,0);
         }
     }
 }
